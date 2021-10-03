@@ -4,11 +4,12 @@ import {
     StyleSheet,
     View,
     StyleProp,
-    ViewStyle
+    ViewStyle,
+    Text
 } from 'react-native';
 
 import { Screen, Drawer } from './sections';
-import { animations } from './animations';
+import { animations, animationsTitleData } from './animations';
 
 const Blank: React.FC = () => <View />;
 
@@ -19,25 +20,31 @@ export const Injection: React.FC<InjectionProps> = ({
     styleProp
 }) => {
     const [currentAnimation, setCurrentAnimation] = useState('');
+    const handleSwitchAnimation = (title: keyof typeof animations & string) => {
+        setCurrentAnimation(title);
+    }
 
-    const animationTitles = Object.keys(animations);
     const animation = currentAnimation ? animations[currentAnimation] : Blank;
     return (
         <View style={[styleProp]}>
-            <View style={styles.screen}>
-                <Screen Animation={animation} />
-            </View>
-            <View style={styles.drawer}>
-                <Drawer animations={animationTitles} />
-            </View>
+            <Screen
+            Animation={animation}
+            styleProp={styles.screen}
+            />
+
+            <Drawer
+            animations={animationsTitleData}
+            styleProp={styles.drawer}
+            switchAnimation={handleSwitchAnimation}
+            />
+
         </ View>
     )
 }
 
 const styles = StyleSheet.create({
     screen: {
-      flex: 0.8,
-      paddingTop: 30
+      flex: 0.8
     },
     drawer: {
       flex: 0.2,

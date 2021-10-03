@@ -3,7 +3,8 @@ import React from 'react';
 import {
     View,
     StyleProp,
-    ViewStyle
+    ViewStyle,
+    Text
 } from 'react-native';
 
 // animation components
@@ -21,6 +22,7 @@ export const Screen: React.FC<ScreenProps> = ({
         <View style={[styleProp]}>
             {/* render animation content */}
             <Animation />
+            
         </View>
     );
 }
