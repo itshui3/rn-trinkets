@@ -4,9 +4,11 @@ import {
     View,
     Animated,
     StyleProp,
-    ViewStyle
+    ViewStyle,
+    Text
 } from 'react-native';
 
+import { SwivelStyles as styles } from './Swivel.style';
 interface SwivelProps {
     styleProp?: StyleProp<ViewStyle>;
 }
@@ -15,7 +17,8 @@ const Component: React.FC<SwivelProps> = ({
 }) => {
 
     return (
-        <View style={[styleProp]}>
+        <View style={[styleProp, styles.container]}>
+            <Text>Swivel</Text>
         </View>
     );
 }
