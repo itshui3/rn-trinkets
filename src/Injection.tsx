@@ -1,5 +1,5 @@
 // external deps
-import React from 'react';
+import React, { useState } from 'react';
 import {
     StyleSheet,
     View,
@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 
 import { Screen, Drawer } from './sections';
+import { animations } from './animations';
+
+const Blank: React.FC = () => <View />;
 
 interface InjectionProps {
     styleProp?: StyleProp<ViewStyle>;
@@ -15,13 +18,17 @@ interface InjectionProps {
 export const Injection: React.FC<InjectionProps> = ({
     styleProp
 }) => {
+    const [currentAnimation, setCurrentAnimation] = useState('');
+
+    const animationTitles = Object.keys(animations);
+    const animation = currentAnimation ? animations[currentAnimation] : Blank;
     return (
         <View style={[styleProp]}>
             <View style={styles.screen}>
-                <Screen />
+                <Screen Animation={animation} />
             </View>
             <View style={styles.drawer}>
-                <Drawer />
+                <Drawer animations={animationTitles} />
             </View>
         </ View>
     )
