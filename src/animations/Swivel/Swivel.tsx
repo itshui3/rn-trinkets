@@ -2,25 +2,25 @@
 import React from 'react';
 import {
     View,
+    Animated,
     StyleProp,
     ViewStyle
 } from 'react-native';
 
-// animation components
-// ...
-
-interface ScreenProps {
+interface SwivelProps {
     styleProp?: StyleProp<ViewStyle>;
-    Animation: React.FC;
 }
-export const Screen: React.FC<ScreenProps> = ({
-    styleProp,
-    Animation
+const Component: React.FC<SwivelProps> = ({
+    styleProp
 }) => {
+
     return (
         <View style={[styleProp]}>
-            {/* render animation content */}
-            <Animation />
         </View>
     );
+}
+
+export const Swivel = {
+    SwivelFC: Component,
+    SwivelTitle: 'swivel'
 }
