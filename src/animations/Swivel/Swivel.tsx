@@ -5,7 +5,9 @@ import {
     Animated,
     StyleProp,
     ViewStyle,
-    Text
+    Text,
+    TouchableOpacity,
+    useWindowDimensions
 } from 'react-native';
 
 import { SwivelStyles as styles } from './Swivel.style';
@@ -15,10 +17,15 @@ interface SwivelProps {
 const Component: React.FC<SwivelProps> = ({
     styleProp
 }) => {
+    const { width, height } = useWindowDimensions();
 
     return (
         <View style={[styleProp, styles.container]}>
-            <Text>Swivel</Text>
+            <TouchableOpacity style={[styles.swivel]} />
+            <TouchableOpacity style={[styles.block, styles.a]} />
+            <TouchableOpacity style={[styles.block, styles.b]} />
+            <TouchableOpacity style={[styles.block, styles.c]} />
+            <TouchableOpacity style={[styles.block, styles.d]} />
         </View>
     );
 }

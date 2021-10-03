@@ -20,7 +20,7 @@ export const Screen: React.FC<ScreenProps> = ({
 }) => {
     return (
         <View style={[styleProp]}>
-            {/* render animation content */}
+
             <Animation />
             
         </View>
