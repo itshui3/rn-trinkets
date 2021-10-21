@@ -31,6 +31,6 @@ const Component: React.FC<SwivelProps> = ({
 }
 
 export const Swivel = {
-    SwivelFC: Component,
-    SwivelTitle: 'swivel'
+    component: Component,
+    title: 'swivel'
 }
