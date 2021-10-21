@@ -4,10 +4,12 @@
 // animations
 import { Swivel } from './Swivel';
 import { FlatListTwoCol } from './FlatListTwoCol';
+import { ViewTwoCol } from './ViewTwoCol';
 
 export const animations = {
     [Swivel.title]: Swivel.component,
-    [FlatListTwoCol.title]: FlatListTwoCol.component
+    [FlatListTwoCol.title]: FlatListTwoCol.component,
+    [ViewTwoCol.title]: ViewTwoCol.component
 };
 
 export const animationsTitleData = Object.keys(animations).map((title, id) => {

@@ -37,7 +37,6 @@ const Component = () => {
             data={data}
             keyExtractor={item => item.id}
             renderItem={renderItem}
-            // numColumns={2}
         />
     );
 }

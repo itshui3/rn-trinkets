@@ -1,0 +1,1 @@
+export { ViewTwoCol } from './ViewTwoCol';
